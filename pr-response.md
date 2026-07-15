@@ -58,7 +58,11 @@ I agree with changing the default sort order to "date added" (descending) so tha
 A watchlist functions primarily as an intent queue rather than a static library. When users open their watchlist, they are typically trying to answer "what should I watch tonight?" based on a recent recommendation, a trailer they just saw, or a fleeting impulse. Alphabetical sorting scatters these recent, high-interest additions randomly throughout the list, creating unnecessary friction and forcing the user to hunt for the title they added just yesterday. 
 
 **Engagement with reviewer's point:**
+<<<<<<< HEAD
 You are completely right that "most users want to see what they added recently." I initially chose alphabetical sorting because I was carrying over the mental model from the `Collection` feature, where a user is browsing a long-term inventory they already own. However, your point highlights that a 'Watchlist' is fundamentally different—it is inherently chronological and tied to recent user interest. I will update the query to sort by `WatchlistEntry.created_at.desc()` and add a note to the PR description documenting this distinction between lists
+=======
+You are completely right that "most users want to see what they added recently." I initially chose alphabetical sorting because I was carrying over the mental model from the `Collection` feature, where a user is browsing a long-term inventory they already own. However, your point highlights that a 'Watchlist' is fundamentally different—it is inherently chronological and tied to recent user interest. I will update the query to sort by `WatchlistEntry.created_at.desc()` and add a note to the PR description documenting this distinction between lists.
+>>>>>>> 7797f41 (Argued for public=True)
 
 ## Comment 6 — Rebase
 **What conflicted:**
