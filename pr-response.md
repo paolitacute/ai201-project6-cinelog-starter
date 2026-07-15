@@ -83,3 +83,4 @@ Navigate to a film's page and click "Add to Watchlist".
 Go to your Watchlist profile to verify the film appears at the top.
 
 Click "Add to Watchlist" on the same film again to ensure deduplication blocks it.
+![Screenshot](C:\Users\paoli\OneDrive\Documents\Programming\CodePath\AI\ai201-project6-cinelog-starter\image.png)
