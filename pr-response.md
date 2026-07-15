@@ -61,9 +61,15 @@ A watchlist functions primarily as an intent queue rather than a static library.
 You are completely right that "most users want to see what they added recently." I initially chose alphabetical sorting because I was carrying over the mental model from the `Collection` feature, where a user is browsing a long-term inventory they already own. However, your point highlights that a 'Watchlist' is fundamentally different—it is inherently chronological and tied to recent user interest. I will update the query to sort by `WatchlistEntry.created_at.desc()` and add a note to the PR description documenting this distinction between lists
 
 ## Comment 6 — Rebase
+
 **What conflicted:**
+The recent refactor on `main` migrating `film_id` from integers to UUIDs clashed with the newly added watchlist logic in `services/watchlist_service.py`, which was originally authored expecting integer IDs.
+
 **How I resolved it:**
+I ran an interactive rebase against `origin/main`. When the conflict triggered, I manually updated `services/watchlist_service.py` to expect UUID strings instead of integers. I updated the docstrings to reflect the new `str` type and ensured the arguments passed to `db.session.get()` and `WatchlistEntry.query.filter_by()` conformed to the new UUID standard. 
+
 **How I verified no conflict remains:**
+After staging the resolved files and completing the rebase with `git rebase --continue`, I ran `git log --oneline --graph` to verify that the branch history is completely linear. The feature commits now sit cleanly on top of the latest `main` without any merge commits remaining in the history.
 
 ## PR Description
 <!-- Written at the end — feature overview, design decisions, manual testing steps -->
