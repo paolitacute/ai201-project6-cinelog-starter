@@ -1,7 +1,7 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-<!-- Fill in at the end — how you used AI tools during this project -->
+I asked Ai how to do a rebase and solve a conflict.
 
 ## Comment 1 — Rename
 
@@ -72,4 +72,14 @@ I ran an interactive rebase against `origin/main`. When the conflict triggered, 
 After staging the resolved files and completing the rebase with `git rebase --continue`, I ran `git log --oneline --graph` to verify that the branch history is completely linear. The feature commits now sit cleanly on top of the latest `main` without any merge commits remaining in the history.
 
 ## PR Description
-<!-- Written at the end — feature overview, design decisions, manual testing steps -->
+The watchlist feature allows users to queue films they plan to watch. I implemented two key design decisions: the default visibility is set to public=True to encourage social discovery, and the default sort order is "date added" (descending) so users see their most recent additions first.
+
+To manually test:
+
+Log in to your account.
+
+Navigate to a film's page and click "Add to Watchlist".
+
+Go to your Watchlist profile to verify the film appears at the top.
+
+Click "Add to Watchlist" on the same film again to ensure deduplication blocks it.
